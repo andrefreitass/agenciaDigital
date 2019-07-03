@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 
-public class CrossBrowser {
+public class CrossBrowser extends Log{
 	protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	protected static ThreadLocal<String> parallelDriver = new ThreadLocal<>();
 	protected static ThreadLocal<SoftAssert> soft = new ThreadLocal<>();

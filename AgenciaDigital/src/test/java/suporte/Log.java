@@ -1,10 +1,18 @@
 package suporte;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.testng.annotations.BeforeClass;
 
 public class Log {
 
 // Initialize Log4j logs
+	static String configFilename = "C:\\Users\\F642250\\Documents\\automacao\\AgenciaDigital\\AgenciaDigital\\src\\test\\java\\suporte\\log4j.properties";
+
+	@BeforeClass
+	public static void getlog() {
+		PropertyConfigurator.configure(configFilename);
+	}
 
 	private static Logger Log = Logger.getLogger(Log.class.getName());//
 

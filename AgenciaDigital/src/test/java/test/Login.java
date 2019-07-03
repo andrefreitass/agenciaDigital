@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import helper.HlpLogin;
 import suporte.CrossBrowser;
+import suporte.Log;
 
 public class Login extends CrossBrowser {
 

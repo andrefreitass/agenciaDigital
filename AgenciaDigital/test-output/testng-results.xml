@@ -2,16 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-07-03T18:51:43Z" name="Default suite" finished-at="2019-07-03T18:51:56Z" duration-ms="13902">
+  <suite started-at="2019-07-03T19:11:41Z" name="Default suite" finished-at="2019-07-03T19:12:02Z" duration-ms="20662">
     <groups>
     </groups>
-    <test started-at="2019-07-03T18:51:43Z" name="Default test" finished-at="2019-07-03T18:51:56Z" duration-ms="13902">
+    <test started-at="2019-07-03T19:11:41Z" name="Default test" finished-at="2019-07-03T19:12:02Z" duration-ms="20662">
       <class name="test.Login">
-        <test-method is-config="true" signature="init()[pri:0, instance:test.Login@60611244]" started-at="2019-07-03T18:51:43Z" name="init" finished-at="2019-07-03T18:51:52Z" duration-ms="9300" status="PASS">
+        <test-method is-config="true" signature="getlog()[pri:0, instance:test.Login@27ae2fd0]" started-at="2019-07-03T19:11:41Z" name="getlog" finished-at="2019-07-03T19:11:41Z" duration-ms="331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getlog -->
+        <test-method is-config="true" signature="init()[pri:0, instance:test.Login@27ae2fd0]" started-at="2019-07-03T19:11:42Z" name="init" finished-at="2019-07-03T19:11:55Z" duration-ms="13858" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="CEN01_RealizaLoginAVLATD()[pri:0, instance:test.Login@60611244]" started-at="2019-07-03T18:51:52Z" name="CEN01_RealizaLoginAVLATD" finished-at="2019-07-03T18:51:56Z" duration-ms="4546" status="PASS">
+        <test-method signature="CEN01_RealizaLoginAVLATD()[pri:0, instance:test.Login@27ae2fd0]" started-at="2019-07-03T19:11:55Z" name="CEN01_RealizaLoginAVLATD" finished-at="2019-07-03T19:12:02Z" duration-ms="6373" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CEN01_RealizaLoginAVLATD -->

@@ -12,6 +12,7 @@ import org.testng.annotations.AfterMethod;
 public class CrossBrowser {
 	protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	protected static ThreadLocal<String> parallelDriver = new ThreadLocal<>();
+	protected static ThreadLocal<SoftAssert> soft = new ThreadLocal<>();
 	private DesiredCapabilities cap;
 	private String URL = "https://agenciadigital.des.caixa:8002/siavl-web/index.html#!/";
 

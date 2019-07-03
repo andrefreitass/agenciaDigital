@@ -25,7 +25,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AgenciaDigital {
 
-	public static String diretorioDatapool = "/home/andre/Developer/work/AgenciaDigital/src/test/java/datapools/";
 	public static String diretorioUpload = "";
 	static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	static WebDriverWait wait;
@@ -41,6 +40,11 @@ public class AgenciaDigital {
 		driver.set(drv);
 	}
 
+	/**
+	 * Construtor
+	 * 
+	 * @param casoTeste
+	 */
 	public void capturaTelas(String casoTeste) throws Exception {
 
 		File scrFile = ((TakesScreenshot) driver.get()).getScreenshotAs(OutputType.FILE);
@@ -72,7 +76,7 @@ public class AgenciaDigital {
 			anexaDescricao("Aguardando elemento: "
 					+ getLocatorElement(wait.until(ExpectedConditions.elementToBeClickable(object))));
 		} catch (NoSuchElementException e) {
-			anexaDescricao("ERRO - Elemento n√£o encontrado: " + getLocatorElement(object));
+			anexaDescricao("ERRO - Elemento n„o encontrado: " + getLocatorElement(object));
 		} catch (Exception e) {
 			anexaDescricao("ERRO - Falha ao tentar localizar o elemento: " + getLocatorElement(object));
 		}
@@ -87,11 +91,11 @@ public class AgenciaDigital {
 	 */
 	public void aguardaElemento(WebElement object, String atributo, String valor) {
 		try {
-			anexaDescricao("Aguardando elemento por combina√ß√£o de Atributos ");
+			anexaDescricao("Aguardando elemento por combinaÁ„o de Atributos ");
 			wait.until(ExpectedConditions.attributeToBe(object, atributo, valor));
 		} catch (Exception e) {
 			e.printStackTrace();
-			anexaDescricao("ERRO - Elemento n√£o encontrado: " + getLocatorElement(object));
+			anexaDescricao("ERRO - Elemento n„o encontrado: " + getLocatorElement(object));
 		}
 	}
 
@@ -108,7 +112,7 @@ public class AgenciaDigital {
 			new Select(object).selectByVisibleText(value);
 			Thread.sleep(300);
 		} catch (Exception e) {
-			anexaDescricao("ERRO - Elemento n√£o encontrado: " + getLocatorElement(object));
+			anexaDescricao("ERRO - Elemento n„o encontrado: " + getLocatorElement(object));
 		}
 	}
 
@@ -125,7 +129,7 @@ public class AgenciaDigital {
 			new Select(object).selectByIndex(index);
 			Thread.sleep(300);
 		} catch (Exception e) {
-			anexaDescricao("ERRO - Elemento n√£o encontrado: " + getLocatorElement(object));
+			anexaDescricao("ERRO - Elemento n„o encontrado: " + getLocatorElement(object));
 		}
 	}
 
@@ -151,7 +155,7 @@ public class AgenciaDigital {
 				}
 			}
 		} catch (NoSuchElementException e) {
-			anexaDescricao(" ERRO - Elemento n√£o encontrado: " + getLocatorElement(object));
+			anexaDescricao(" ERRO - Elemento n„o encontrado: " + getLocatorElement(object));
 		}
 	}
 
@@ -166,7 +170,7 @@ public class AgenciaDigital {
 					+ getLocatorElement(wait.until(ExpectedConditions.elementToBeClickable(object))));
 			object.clear();
 		} catch (NoSuchElementException e) {
-			anexaDescricao("ERRO - Elemento n√£o encontrato: " + getLocatorElement(object));
+			anexaDescricao("ERRO - Elemento n„o encontrato: " + getLocatorElement(object));
 		} catch (Exception e) {
 			anexaDescricao("ERRO - Erro ao limpar o campo:" + getLocatorElement(object));
 		}
@@ -188,9 +192,9 @@ public class AgenciaDigital {
 			object.sendKeys(texto);
 			object.sendKeys(Keys.TAB);
 		} catch (InvalidElementStateException e) {
-			anexaDescricao("ERRO - Elemento n√£o esta habilitado no HTML: " + getLocatorElement(object));
+			anexaDescricao("ERRO - Elemento n„o esta habilitado no HTML: " + getLocatorElement(object));
 		} catch (StaleElementReferenceException e) {
-			anexaDescricao("ERRO - Elemento n√£o encontrado no HTML: " + getLocatorElement(object));
+			anexaDescricao("ERRO - Elemento n„o encontrado no HTML: " + getLocatorElement(object));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -206,19 +210,7 @@ public class AgenciaDigital {
 			object.sendKeys(Keys.TAB);
 			// click(object);
 		} catch (Exception e) {
-			anexaDescricao("ERRO - Elemento n√£o encontrado no HTML: " + getLocatorElement(object));
-		}
-	}
-
-	public void escape() {
-		try {
-			Robot r = new Robot();
-			r.keyPress(KeyEvent.VK_ESCAPE);
-			r.keyRelease(KeyEvent.VK_ESCAPE);
-			r.keyPress(KeyEvent.VK_ESCAPE);
-			r.keyRelease(KeyEvent.VK_ESCAPE);
-		} catch (AWTException e1) {
-			e1.printStackTrace();
+			anexaDescricao("ERRO - Elemento n„o encontrado no HTML: " + getLocatorElement(object));
 		}
 	}
 
@@ -233,10 +225,14 @@ public class AgenciaDigital {
 					+ getLocatorElement(wait.until(ExpectedConditions.elementToBeClickable(object))));
 			object.click();
 		} catch (NoSuchElementException e) {
-			anexaDescricao("ERRO - Elemento n√£o encontrado no HTML: " + getLocatorElement(object));
+			anexaDescricao("ERRO - Elemento n„o encontrado no HTML: " + getLocatorElement(object));
 		}
 	}
 
+	/**
+	 * Scroll na pagina
+	 * 
+	 */
 	public void scrooll(WebElement object) {
 		JavascriptExecutor js = (JavascriptExecutor) driver.get();
 		js.executeScript("arguments [0] .scrollIntoView ();", object);
@@ -244,7 +240,7 @@ public class AgenciaDigital {
 	}
 
 	/**
-	 * Scroll at√© o elemento declarado
+	 * Scroll no elemento declarado
 	 * 
 	 * @param element
 	 */
@@ -263,7 +259,7 @@ public class AgenciaDigital {
 	}
 
 	/**
-	 * M√©todo que Marca em vermelho o elemento HTML da tela para auxiliar em Prints
+	 * Metodo que Marca em vermelho o elemento HTML da tela para auxiliar em Prints
 	 * e aguarda o TEMPO_DE_ESPERA definido.
 	 * 
 	 * @param driver
@@ -295,30 +291,19 @@ public class AgenciaDigital {
 					+ getLocatorElement(wait.until(ExpectedConditions.elementToBeClickable(botaoUpload))));
 			botaoUpload.sendKeys(new File(diretorioUpload + arquivo).getAbsolutePath());
 		} catch (Exception e) {
-			anexaDescricao("ERRO - Elemento n√£o encontrado no HTML: " + getLocatorElement(botaoUpload));
+			anexaDescricao("ERRO - Elemento n„o encontrado no HTML: " + getLocatorElement(botaoUpload));
 		}
 
 	}
 
 	/**
-	 * Realiza o print da tela e anexa no relatorio Allure
-	 * 
-	 * @param casoTeste
-	 */
-
-	public void anexaEvidencia(String casoTeste) {
-		// Allure.addAttachment(casoTeste, new ByteArrayInputStream(((TakesScreenshot)
-		// driver.get()).getScreenshotAs(OutputType.BYTES)));
-	}
-
-	/**
-	 * Anexa Descri√ß√£o no relat√≥rio
+	 * Anexa DescriÁ„o no relatÛrio
 	 * 
 	 * @param desc
 	 */
 	public void anexaDescricao(String desc) {
-		// ReportListener.setSteps(desc);
-		// Log.fatal(desc);
+		ReportListener.setSteps(desc);
+		Log.fatal(desc);
 	}
 
 	/**
@@ -351,210 +336,118 @@ public class AgenciaDigital {
 	}
 
 	/**
-	 * Seleciona senha no componente
-	 * 
-	 * @param btn   (Lista de bot√µes)
-	 * @param senha
-	 */
-	public void cliqueBotoesSenha(List<WebElement> btn, String senha) {
-		aguardaElemento(btn.get(0));
-		char[] pass = senha.toCharArray();
-		for (int i = 0; i < pass.length; i++) {
-			for (WebElement button : btn) {
-				if (button.getText().equals(String.valueOf(pass[i]))) {
-					click(button);
-					break;
-				}
-			}
-		}
-	}
-
-	/**
-	 * Aguarda carga da p√°gina
+	 * Aguarda carregamento pagina
 	 */
 	public void aguardaLoader() {
-		// aguardaElemento(new Menu().getLoader(), "style", "display: none;");
-		// Log.fatal("Aguardando Loader");
-		//wait.until(ExpectedConditions.not(ExpectedConditions.visibilityOf(mn.getLoader())));
+		Log.fatal("Aguardando Loader");
 	}
 
 	/**
-	 * M√©todo para valida√ß√£o de campos e resultado esperado USAR SOMENTE COMO
-	 * REFER√äNCIA DOS M√âTODOS COM TRY/CATCH OU VALIDACA√á√ÉO DE BANCO DE DADOS
+	 * Metodo para validacao de campos e resultado esperado USAR SOMENTE COMO
+	 * REFER√äNCIA DOS METODOS COM TRY/CATCH OU VALIDACAO DE BANCO DE DADOS
 	 * 
 	 * @param validacao
 	 * @param check
 	 */
 	public void pontoVerificacao(boolean validacao, String check) {
-		// CrossBrowser.soft.get().assertTrue(validacao,check);
-		// Log.fatal("Status: " + validacao + " - Ponto de verifica√ß√£o: " + check);
+		CrossBrowser.soft.get().assertTrue(validacao, check);
+		Log.fatal("Status: " + validacao + " - Ponto de verificaÁ„o: " + check);
 	}
 
 	/**
-	 * Metodo para valida√ß√£o din√¢mica de objetos
+	 * Metodo para validaÁ„o dinamica de objetos
 	 * 
-	 * @param object     - elemento alvo da valida√ß√£o
-	 * @param atributo   - propriedade do objeto para valida√ß√£o
+	 * @param object     - elemento alvo da validaÁ„o
+	 * @param atributo   - propriedade do objeto para validaÁ„o
 	 * @param valorCheck - valor a ser validado
 	 */
 	public void pontoVerificacao(WebElement object, String atributo, String valorCheck) {
 		try {
 			if (atributo.equals("newText")) {
 				pontoVerificacao(object.getText().contains(valorCheck),
-						"Valida√ß√£o do texto do campo: " + getLocatorElement(object) + "</br><b>Valor atual:</b> "
+						"validaÁ„o do texto do campo: " + getLocatorElement(object) + "</br><b>Valor atual:</b> "
 								+ object.getText() + "</br><b>Valor esperado:</b> " + valorCheck);
 			} else {
 				pontoVerificacao(object.getAttribute(atributo).contains(valorCheck),
-						"Valida√ß√£o do campo: " + getLocatorElement(object) + "</br><b>Valor atual:</b> "
+						"validaÁ„o do campo: " + getLocatorElement(object) + "</br><b>Valor atual:</b> "
 								+ object.getAttribute(atributo) + "</br><b>Valor esperado:</b> " + valorCheck);
 			}
 		} catch (NoSuchElementException fail) {
-			pontoVerificacao(false, "Objeto n√£o localizado - " + getLocatorElement(object));
+			pontoVerificacao(false, "Objeto n„o localizado - " + getLocatorElement(object));
 		} catch (Exception e) {
 			pontoVerificacao(false, "Erro ao tentar localizar objeto - " + getLocatorElement(object));
 		}
 	}
 
 	/**
-	 * Metodo para valida√ß√£o textual
+	 * Metodo para validaÁ„o textual
 	 * 
-	 * @param object     - elemento alvo da valida√ß√£o
+	 * @param object     - elemento alvo da validaÁ„o
 	 * @param valorCheck - valor a ser validado
 	 */
 	public void pontoVerificacao(WebElement object, String valorCheck) {
 		try {
 			pontoVerificacao(object.getText().contains(valorCheck),
-					"Valida√ß√£o do texto do campo: " + getLocatorElement(object) + "</br><b>Valor atual:</b> "
+					"validaÁ„o do texto do campo: " + getLocatorElement(object) + "</br><b>Valor atual:</b> "
 							+ object.getText() + "</br><b>Valor esperado:</b> " + valorCheck);
 		} catch (NoSuchElementException fail) {
-			pontoVerificacao(false, "Objeto n√£o localizado - " + getLocatorElement(object));
+			pontoVerificacao(false, "Objeto n„o localizado - " + getLocatorElement(object));
 		} catch (Exception e) {
 			pontoVerificacao(false, "Erro ao tentar localizar objeto - " + getLocatorElement(object));
 		}
 	}
 
 	/**
-	 * Metodo para valida√ß√£o de padr√µes por Express√µes Regulares
+	 * Metodo para validaÁ„o de padrıes por Expressıes Regulares
 	 * 
-	 * @param padrao   - padr√£o a ser validado
-	 * @param object   - elemento alvo da valida√ß√£o
-	 * @param atributo - propriedade do objeto para valida√ß√£o
+	 * @param padrao   - padr„o a ser validado
+	 * @param object   - elemento alvo da validaÁ„o
+	 * @param atributo - propriedade do objeto para validaÁ„o
 	 */
 	public void pontoVerificacao(Pattern padrao, WebElement object, String atributo) {
 		try {
 			pontoVerificacao(
 					padrao.matcher(wait.until(ExpectedConditions.visibilityOf(object)).getAttribute(atributo)
 							.replace("	", "")).find(),
-					"Valida√ß√£o do campo: " + getLocatorElement(object) + "</br><b>Padr√£o:</b> " + padrao
+					"validaÁ„o do campo: " + getLocatorElement(object) + "</br><b>Padr√£o:</b> " + padrao
 							+ "</br><b>Valor atual:</b> " + object.getAttribute(atributo));
 		} catch (NoSuchElementException fail) {
-			pontoVerificacao(false, "Objeto n√£o localizado - " + getLocatorElement(object));
+			pontoVerificacao(false, "Objeto n„o localizado - " + getLocatorElement(object));
 		} catch (Exception e) {
 			pontoVerificacao(false, "Erro ao tentar localizar objeto - " + getLocatorElement(object));
 		}
 	}
 
 	/**
-	 * Metodo para valida√ß√£o da quantidade de caracteres suportados pelo campo
+	 * Metodo para validaÁ„o da quantidade de caracteres suportados pelo campo
 	 * 
-	 * @param object   - elemento alvo da valida√ß√£o
-	 * @param atributo - propriedade do objeto para valida√ß√£o
+	 * @param object   - elemento alvo da validaÁ„o
+	 * @param atributo - propriedade do objeto para validaÁ„o
 	 * @param qtChar   - Limite de caracteres a ser checado
 	 */
 	public void pontoVerificacao(WebElement object, String atributo, int qtChar) {
 		try {
 			if (object.getAttribute("type").equals("hidden")) {
 				pontoVerificacao(object.getAttribute(atributo).split(";").length == qtChar,
-						"Valida√ß√£o do limite de caracteres do campo: " + getLocatorElement(object)
+						"validaÁ„o do limite de caracteres do campo: " + getLocatorElement(object)
 								+ "</br><b>Quantidade atual:</b> " + object.getAttribute(atributo).split(";").length
 								+ "</br><b>Quantidade esperada:</b> " + qtChar);
 			} else {
 				pontoVerificacao(
 						wait.until(ExpectedConditions.visibilityOf(object)).getAttribute(atributo).length() == qtChar,
-						"Valida√ß√£o do limite de caracteres do campo: " + getLocatorElement(object)
+						"validaÁ„o do limite de caracteres do campo: " + getLocatorElement(object)
 								+ "</br><b>Quantidade atual:</b> " + object.getAttribute(atributo).length()
 								+ "</br><b>Quantidade esperada:</b> " + qtChar);
 			}
 		} catch (NoSuchElementException fail) {
-			pontoVerificacao(false, "Objeto n√£o localizado - " + getLocatorElement(object));
+			pontoVerificacao(false, "Objeto n„o localizado - " + getLocatorElement(object));
 		} catch (Exception e) {
 			pontoVerificacao(false, "Erro ao tentar localizar objeto - " + getLocatorElement(object));
 		}
 	}
 
-	/**
-	 * Localiza c√©lulas em uma tabela baseando-se em um texto. O m√©todo percorre
-	 * todas as linhas da tabela. Exemplo: findElementOnTable("form:table",
-	 * "2ChevroletCorvette", "rf-dt-c", 6);
-	 * 
-	 * @param ID_Table         - ID da tabela referenciada
-	 * @param textFind         - Texto a ser localizado
-	 * @param tdClass          - A classe CSS da linha (td)
-	 * @param indexColunReturn - N√∫mero da coluna que deve retornar
-	 */
-	public ArrayList<WebElement> findElementOnTable(WebElement businessTable, String textFind, String tdClass,
-			int indexColunReturn) {
-		ArrayList<WebElement> list = new ArrayList<WebElement>();
-
-		for (int i = 1; true; i++) {
-			List<WebElement> tableRows = businessTable
-					.findElements(By.xpath(".//tr[" + i + "]/td[@class = '" + tdClass + "']"));
-			String txt = "";
-			if (!tableRows.isEmpty()) {
-				for (int j = 0; j < tableRows.size(); j++) {
-					txt += tableRows.get(j).getText();
-				}
-				if (txt.contains(textFind)) {
-					list.add(tableRows.get(indexColunReturn));
-				}
-			} else {
-				break;
-			}
-		}
-		return list;
-	}
-
-	/**
-	 * Localiza icones em uma tabela baseando-se em um texto. O m√©todo percorre
-	 * todas as linhas da tabela. Exemplo: findElementOnTable("form:table",
-	 * "2ChevroletCorvette", "rf-dt-c", "delete", 6);
-	 * 
-	 * @param ID_Table         - ID da tabela referenciada
-	 * @param textFind         - Texto a ser localizado
-	 * @param tdClass          - A classe CSS da linha (td)
-	 * @param icone            - Refer√™ncia textual do √≠cone ou img
-	 * @param indexColunReturn - N√∫mero da coluna que deve retornar
-	 */
-	public WebElement findElementOnTable(WebElement Table, String textFind, String tdClass, String icone,
-			int indexColunReturn) {
-		ArrayList<WebElement> list = findElementOnTable(Table, textFind, tdClass, indexColunReturn);
-		WebElement icon = null;
-		if (!list.isEmpty()) {
-			for (int i = 0; i < list.size(); i++) {
-				List<WebElement> tableRows = list.get(i).findElements(By.xpath(".//a/img"));
-				if (!tableRows.isEmpty()) {
-					for (int j = 0; j < tableRows.size(); j++) {
-						if (tableRows.get(j).getAttribute("src").contains(icone)) {
-							icon = tableRows.get(j);
-							break;
-						}
-					}
-				} else {
-					System.out.println("Icone N√ÉO Localizado!");
-				}
-			}
-		} else {
-			System.out.println("Celulas N√ÉO Localizadas!");
-		}
-		return icon;
-	}
-
 	private String getLocatorElement(WebElement element) {
 		return element.toString().replaceAll("\\S+: \\S+ on \\S+ (\\S+) -> ", "[");
-	}
-
-	public String[][] getDataPool(String dpt) {
-		return new Datapool(diretorioDatapool + dpt).retornaDadosPlanilha();
 	}
 
 }

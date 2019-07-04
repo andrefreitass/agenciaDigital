@@ -2,23 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-07-03T19:11:41Z" name="Default suite" finished-at="2019-07-03T19:12:02Z" duration-ms="20662">
+  <suite started-at="2019-07-03T21:16:42Z" name="Default suite" finished-at="2019-07-03T21:17:03Z" duration-ms="21354">
     <groups>
     </groups>
-    <test started-at="2019-07-03T19:11:41Z" name="Default test" finished-at="2019-07-03T19:12:02Z" duration-ms="20662">
+    <test started-at="2019-07-03T21:16:42Z" name="Default test" finished-at="2019-07-03T21:17:03Z" duration-ms="21354">
       <class name="test.Login">
-        <test-method is-config="true" signature="getlog()[pri:0, instance:test.Login@27ae2fd0]" started-at="2019-07-03T19:11:41Z" name="getlog" finished-at="2019-07-03T19:11:41Z" duration-ms="331" status="PASS">
+        <test-method is-config="true" signature="getlog()[pri:0, instance:test.Login@147ed70f]" started-at="2019-07-03T21:16:42Z" name="getlog" finished-at="2019-07-03T21:16:42Z" duration-ms="212" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getlog -->
-        <test-method is-config="true" signature="init()[pri:0, instance:test.Login@27ae2fd0]" started-at="2019-07-03T19:11:42Z" name="init" finished-at="2019-07-03T19:11:55Z" duration-ms="13858" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:test.Login@147ed70f]" started-at="2019-07-03T21:16:42Z" name="init" finished-at="2019-07-03T21:16:54Z" duration-ms="12059" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="CEN01_RealizaLoginAVLATD()[pri:0, instance:test.Login@27ae2fd0]" started-at="2019-07-03T19:11:55Z" name="CEN01_RealizaLoginAVLATD" finished-at="2019-07-03T19:12:02Z" duration-ms="6373" status="PASS">
+        <test-method signature="CEN01_RealizaLoginAVLATD()[pri:0, instance:test.Login@147ed70f]" started-at="2019-07-03T21:16:54Z" name="CEN01_RealizaLoginAVLATD" finished-at="2019-07-03T21:17:01Z" duration-ms="7232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CEN01_RealizaLoginAVLATD -->
+        <test-method is-config="true" signature="finalizaBrowser()[pri:0, instance:test.Login@147ed70f]" started-at="2019-07-03T21:17:01Z" name="finalizaBrowser" finished-at="2019-07-03T21:17:03Z" duration-ms="1799" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalizaBrowser -->
+        <test-method is-config="true" signature="encerraCasoTeste()[pri:0, instance:test.Login@147ed70f]" started-at="2019-07-03T21:17:03Z" name="encerraCasoTeste" finished-at="2019-07-03T21:17:03Z" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- encerraCasoTeste -->
       </class> <!-- test.Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

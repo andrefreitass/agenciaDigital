@@ -17,7 +17,7 @@ public class CrossBrowser extends Log{
 	private String URL = "https://agenciadigital.des.caixa:8002/siavl-web/index.html#!/";
 
 	/**
-	 * Método para retornar o driver conforme o browser informado na suite
+	 * Metodo para retornar o driver conforme o browser informado na suite
 	 * 
 	 * @param browser
 	 * @throws Exception
@@ -53,9 +53,10 @@ public class CrossBrowser extends Log{
 		driver.get().manage().window().maximize();
 	}
 
-	//@AfterMethod
+	@AfterMethod
 	public void finalizaBrowser() {
 		driver.get().quit();
+		Log.info("Encerrando Navegador");
 	}
 
 }

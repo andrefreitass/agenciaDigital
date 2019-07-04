@@ -25,14 +25,12 @@ public class Login extends CrossBrowser {
 
 	@Test
 	public void CEN01_RealizaLoginAVLATD() throws Exception {
+		login.anexaDescricao("Realiza Login Perfil AVL");
 		login.realizaLoginAtendimento("ATENDIMENTO");
 		login.clicaBotaoEntrar();
 		login.acessaMenu("Manual do Usuário");
 	}
 
-	/*
-	 * 
-	 * 
 	@Test
 	public void CEN02_RealizaLoginAVLAUD() throws Exception {
 		login.realizaLoginAtendimento("AUDITORIA");
@@ -143,6 +141,5 @@ public class Login extends CrossBrowser {
 		login.capturaTelas("Realiza Login");
 	}
 	
-	*/
 
 }

@@ -2,6 +2,7 @@ package suporte;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class Log {
@@ -12,6 +13,12 @@ public class Log {
 	@BeforeClass
 	public static void getlog() {
 		PropertyConfigurator.configure(configFilename);
+		startTestCase("Iniciando Caso Teste");
+	}
+
+	@AfterClass
+	public static void encerraCasoTeste() {
+		endTestCase(configFilename);
 	}
 
 	private static Logger Log = Logger.getLogger(Log.class.getName());//
@@ -22,31 +29,21 @@ public class Log {
 	public static void startTestCase(String sTestCaseName) {
 
 		Log.info("****************************************************************************************");
-
 		Log.info("****************************************************************************************");
-
-		Log.info("$$$$$$$$$$$$$$$$$$$$$                " + sTestCaseName + "      $$$$$$$$$$$$$$$$$$$$$$$$$");
-
+		Log.info("$$$$$$$$$$$$$$$$$$$$$                " + sTestCaseName + "      $$$$$$$$$$$$$$$$$$$$$$$$");
 		Log.info("****************************************************************************************");
-
 		Log.info("****************************************************************************************");
 
 	}
 
 	// This is to print log for the ending of the test case
-
 	public static void endTestCase(String sTestCaseName) {
 
-		Log.info("XXXXXXXXXXXXXXXXXXXXXXX             " + "-E---N---D-" + "             XXXXXXXXXXXXXXXXXXXXXX");
-
-		Log.info("X");
-
-		Log.info("X");
-
-		Log.info("X");
-
-		Log.info("X");
-
+		Log.info("****************************************************************************************");
+		Log.info("****************************************************************************************");
+		Log.info("XXXXXXXXXXXXXXX      " + "------ENCERRANDO CASO DE TESTE------" + "      XXXXXXXXXXXXXXX");
+		Log.info("****************************************************************************************");
+		Log.info("****************************************************************************************");
 	}
 
 	// Need to create these methods, so that they can be called

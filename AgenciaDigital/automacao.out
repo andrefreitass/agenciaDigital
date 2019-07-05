@@ -1,23 +1,22 @@
-03-07-2019 18:07 INFO  Log:31 - ****************************************************************************************
-03-07-2019 18:07 INFO  Log:32 - ****************************************************************************************
-03-07-2019 18:07 INFO  Log:33 - $$$$$$$$$$$$$$$$$$$$$                Iniciando Caso Teste      $$$$$$$$$$$$$$$$$$$$$$$$
-03-07-2019 18:07 INFO  Log:34 - ****************************************************************************************
-03-07-2019 18:07 INFO  Log:35 - ****************************************************************************************
-03-07-2019 18:07 FATAL Log:71 - Realiza Login Perfil AVL
-03-07-2019 18:07 FATAL Log:71 - Limpando campo: [id: username]
-03-07-2019 18:07 INFO  Log:53 - Preenche Campo
-03-07-2019 18:07 FATAL Log:71 - Preenchendo campo: [id: username] Valor: c891887
-03-07-2019 18:07 FATAL Log:71 - Limpando campo: [id: password]
-03-07-2019 18:07 INFO  Log:53 - Preenche Campo
-03-07-2019 18:07 FATAL Log:71 - Preenchendo campo: [id: password] Valor: Senha01
-03-07-2019 18:07 FATAL Log:71 - Clicando no objeto: [id: kc-login]
-03-07-2019 18:07 INFO  Log:53 - Aguardando Elemento Ser Carregado em Tela
-03-07-2019 18:07 FATAL Log:71 - Aguardando elemento: [xpath: //*[@id='app']/div/div[2]/aside/section/ul/li[6]/a/span]
-03-07-2019 18:07 FATAL Log:71 - Acessando menu: [xpath: //*[@id='app']/div/div[2]/aside/section/ul/li[6]/a/span]
-03-07-2019 18:07 FATAL Log:71 - Clicando no objeto: [xpath: //*[@id='app']/div/div[2]/aside/section/ul/li[6]/a/span]
-03-07-2019 18:07 INFO  Log:53 - Encerrando Navegador
-03-07-2019 18:07 INFO  Log:42 - ****************************************************************************************
-03-07-2019 18:07 INFO  Log:43 - ****************************************************************************************
-03-07-2019 18:07 INFO  Log:44 - XXXXXXXXXXXXXXX      ------ENCERRANDO CASO DE TESTE------      XXXXXXXXXXXXXXX
-03-07-2019 18:07 INFO  Log:45 - ****************************************************************************************
-03-07-2019 18:07 INFO  Log:46 - ****************************************************************************************
+05-07-2019 11:07 INFO  Log:31 - ****************************************************************************************
+05-07-2019 11:07 INFO  Log:32 - ****************************************************************************************
+05-07-2019 11:07 INFO  Log:33 - $$$$$$$$$$$$$$$$$$$$$                Iniciando Caso Teste      $$$$$$$$$$$$$$$$$$$$$$$$
+05-07-2019 11:07 INFO  Log:34 - ****************************************************************************************
+05-07-2019 11:07 INFO  Log:35 - ****************************************************************************************
+05-07-2019 11:07 FATAL Log:71 - Realiza Login Perfil AVL
+05-07-2019 11:07 FATAL Log:71 - Limpando campo: [id: username]
+05-07-2019 11:07 INFO  Log:53 - Preenche Campo
+05-07-2019 11:07 FATAL Log:71 - Preenchendo campo: [id: username] Valor: c891933
+05-07-2019 11:07 FATAL Log:71 - Limpando campo: [id: password]
+05-07-2019 11:07 INFO  Log:53 - Preenche Campo
+05-07-2019 11:07 FATAL Log:71 - Preenchendo campo: [id: password] Valor: Senha01
+05-07-2019 11:07 FATAL Log:71 - Clicando no objeto: [id: kc-login]
+05-07-2019 11:07 INFO  Log:53 - Aguardando Elemento Ser Carregado em Tela
+05-07-2019 11:07 FATAL Log:71 - Aguardando elemento: [xpath: //*[@id='app']/div/div[2]/aside/section/ul/li[4]/a/span]
+05-07-2019 11:07 FATAL Log:71 - Acessando menu: [xpath: //*[@id='app']/div/div[2]/aside/section/ul/li[4]/a/span]
+05-07-2019 11:07 FATAL Log:71 - Clicando no objeto: [xpath: //*[@id='app']/div/div[2]/aside/section/ul/li[4]/a/span]
+05-07-2019 11:07 INFO  Log:42 - ****************************************************************************************
+05-07-2019 11:07 INFO  Log:43 - ****************************************************************************************
+05-07-2019 11:07 INFO  Log:44 - XXXXXXXXXXXXXXX      ------ENCERRANDO CASO DE TESTE------      XXXXXXXXXXXXXXX
+05-07-2019 11:07 INFO  Log:45 - ****************************************************************************************
+05-07-2019 11:07 INFO  Log:46 - ****************************************************************************************

@@ -14,7 +14,7 @@ public class PgoLogin extends GenericsPgo {
 	@FindBy(id = "kc-login")
 	public WebElement BTN_ENTRAR;
 	
-	@FindBy(css = ".kc-feedback-text")
+	@FindBy(css = "span.kc-feedback-text")
 	public WebElement MSG_ERRO;
 	
 }

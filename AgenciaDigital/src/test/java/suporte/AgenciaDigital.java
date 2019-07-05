@@ -331,6 +331,36 @@ public class AgenciaDigital {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Acessa a funcionalidade conforme mapeado na classe {@link PgoMenu}
+	 * 
+	 * @param subMenu
+	 */
+	public void acessaSubMenu(String subMenu) {
+		ArrayList<WebElement> subMenus = mn.getHierarquiaSubMenus(subMenu);
+		aguardaElemento(subMenus.get(0));
+		for (int i = 0; i < subMenus.size(); i++) {
+			try {
+				subMenus.get(subMenus.size() - 1).isDisplayed();
+				anexaDescricao("Acessando menu: " + getLocatorElement(
+						wait.until(ExpectedConditions.elementToBeClickable(subMenus.get(subMenus.size() - 1)))));
+				click(subMenus.get(subMenus.size() - 1));
+				break;
+			} catch (Exception e) {
+				click(subMenus.get(i));
+				if (!subMenus.get(i + 1).isDisplayed()) {
+					click(subMenus.get(i));
+				}
+			}
+		}
+		try {
+			Thread.sleep(8);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 
 	/**
 	 * Aguarda carregamento pagina
@@ -341,13 +371,13 @@ public class AgenciaDigital {
 
 	/**
 	 * Metodo para validacao de campos e resultado esperado USAR SOMENTE COMO
-	 * REFERÃŠNCIA DOS METODOS COM TRY/CATCH OU VALIDACAO DE BANCO DE DADOS
+	 * REFERÃŠNCIA DOS METODOS COM TRY/CATCH
 	 * 
 	 * @param validacao
 	 * @param check
 	 */
-	public void pontoVerificacao(boolean validacao, String check) {
-		CrossBrowser.soft.get().assertTrue(validacao, check);
+	private void pontoVerificacao(boolean validacao, String check) {
+		//CrossBrowser.soft.get().assertTrue(validacao, check);
 		Log.fatal("Status: " + validacao + " - Ponto de verificação: " + check);
 	}
 

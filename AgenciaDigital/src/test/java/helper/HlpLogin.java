@@ -18,7 +18,7 @@ public class HlpLogin extends AgenciaDigital {
 
 	public void realizaLoginAtendimento(String perfilAcesso) throws Exception {
 		if (perfilAcesso.equalsIgnoreCase("ATENDIMENTO")) {
-			preencheCampo(pg.CMP_LOGIN, "c891887");
+			preencheCampo(pg.CMP_LOGIN, "C891886");
 			preencheCampo(pg.CMP_SENHA, senha);
 			capturaTelas("Realiza Login");
 		} else if (perfilAcesso.equalsIgnoreCase("AUDITORIA")) {
@@ -109,7 +109,8 @@ public class HlpLogin extends AgenciaDigital {
 	}
 
 	public void validaMensagemError() {
-		pontoVerificacao(pg.MSG_ERRO, "innerText", "Nome de usuário ou senha inválida.");
+		aguardaElemento(pg.MSG_ERRO);
+		pontoVerificacao(pg.MSG_ERRO, "newText" ,"Nome de usuário ou senha inválida.");
 	}
 
 }

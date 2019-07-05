@@ -41,80 +41,74 @@ public class Menu {
 			listMenu.add(menu.MENU_MANUAL_USUARIO);
 			break;
 
+		default:
+			System.out.println("Informe um MENU válido");
+			break;
+		}
+		return listMenu;
+
+	}
+
+	public ArrayList<WebElement> getHierarquiaSubMenus(String opcao) {
+		ArrayList<WebElement> subMenu = new ArrayList<WebElement>();
+		switch (opcao) {
 		case "Protocolo de Atendimento":
-			listMenu.add(menu.MENU_PESQUISAS);
-			listMenu.add(menu.SUBMENU_PESQUISAS_PROTOCOLO_ATENDIMENTO);
+			subMenu.add(menu.SUBMENU_PESQUISAS_PROTOCOLO_ATENDIMENTO);
 			break;
 
 		case "Notas de Negociação":
-			listMenu.add(menu.MENU_PESQUISAS);
-			listMenu.add(menu.SUBMENU_PESQUISAS_NOTAS_NEGOCIACAO);
+			subMenu.add(menu.SUBMENU_PESQUISAS_NOTAS_NEGOCIACAO);
 			break;
 
 		case "Erros do chat":
-			listMenu.add(menu.MENU_PESQUISAS);
-			listMenu.add(menu.SUBMENU_PESQUISAS_ERROS_CHAT);
+			subMenu.add(menu.SUBMENU_PESQUISAS_ERROS_CHAT);
 			break;
 
 		case "Pedidos de Adesão":
-			listMenu.add(menu.MENU_PESQUISAS);
-			listMenu.add(menu.MENU_PESQUISAS);
-			listMenu.add(menu.SUBMENU_PESQUISAS_PEDIDOS_ADESAO);
+			subMenu.add(menu.SUBMENU_PESQUISAS_PEDIDOS_ADESAO);
 			break;
-
 		case "Estatisticas de chat":
-			listMenu.add(menu.MENU_PESQUISAS);
-			listMenu.add(menu.MENU_PESQUISAS);
-			listMenu.add(menu.SUBMENU_PESQUISAS_ESTATISTICAS_CHAT);
+			subMenu.add(menu.SUBMENU_PESQUISAS_ESTATISTICAS_CHAT);
 			break;
 
 		case "Unidades Atendimento":
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.SUBMENU_GERENCIAR_UNIDADES_ATENDIMENTO);
+			subMenu.add(menu.SUBMENU_GERENCIAR_UNIDADES_ATENDIMENTO);
 			break;
 
 		case "Equipes":
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.SUBMENU_GERENCIAR_EQUIPES);
+			subMenu.add(menu.SUBMENU_GERENCIAR_EQUIPES);
 			break;
 
 		case "Modelos de Nota":
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.SUBMENU_GERENCIAR_MODELO_NOTA);
+			subMenu.add(menu.SUBMENU_GERENCIAR_MODELO_NOTA);
 			break;
 
 		case "Ações do Produto":
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.SUBMENU_GERENCIAR_ACOES_PRODUTO);
+			subMenu.add(menu.SUBMENU_GERENCIAR_ACOES_PRODUTO);
 			break;
 
 		case "Campos do Modelo":
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.SUBMENU_GERENCIAR_CAMPOS_MODELO);
+			subMenu.add(menu.SUBMENU_GERENCIAR_CAMPOS_MODELO);
 			break;
 
 		case "Itens de Fluxo":
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.SUBMENU_GERENCIAR_ITENS_FLUXO);
+			subMenu.add(menu.SUBMENU_GERENCIAR_ITENS_FLUXO);
 			break;
 
 		case "Tipos de Pendencia da Nota":
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.SUBMENU_GERENCIAR_TIPOS_PENDENCIA_NOTA);
+			subMenu.add(menu.SUBMENU_GERENCIAR_TIPOS_PENDENCIA_NOTA);
 			break;
 
 		case "Mensagem de Notificação":
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.MENU_GERENCIAR);
-			listMenu.add(menu.SUBMENU_GERENCIAR_MENSAGEM_NOTIFICACAO);
+			subMenu.add(menu.SUBMENU_GERENCIAR_MENSAGEM_NOTIFICACAO);
 			break;
-			
+
 		default:
 			System.out.println("Informe um MENU ou SUBMENU válido");
 			break;
 		}
-		return listMenu;
+		return subMenu;
+
 	}
 
 }

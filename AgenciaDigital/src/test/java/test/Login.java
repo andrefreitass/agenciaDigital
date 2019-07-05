@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import helper.HlpLogin;
 import suporte.CrossBrowser;
-import suporte.Log;
 
 public class Login extends CrossBrowser {
 
@@ -26,9 +25,10 @@ public class Login extends CrossBrowser {
 	@Test
 	public void CEN01_RealizaLoginAVLATD() throws Exception {
 		login.anexaDescricao("Realiza Login Perfil AVL");
-		login.realizaLoginAtendimento("ATENDIMENTO");
+		login.realizaLoginAtendimento("GESTOR MATRIZ");
 		login.clicaBotaoEntrar();
-		login.acessaMenu("Manual do Usuário");
+		login.acessaMenu("Pesquisas");
+		login.acessaSubMenu("Erros do chat");
 	}
 
 	@Test
@@ -140,6 +140,5 @@ public class Login extends CrossBrowser {
 		login.validaMensagemError();
 		login.capturaTelas("Realiza Login");
 	}
-	
 
 }

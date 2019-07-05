@@ -5,7 +5,10 @@
     <classes>
       <class name="test.Login">
         <methods>
+          <include name="getlog"/>
           <include name="CEN01_RealizaLoginAVLATD"/>
+          <include name="encerraCasoTeste"/>
+          <include name="finalizaBrowser"/>
           <include name="init"/>
         </methods>
       </class> <!-- test.Login -->

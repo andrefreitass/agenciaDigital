@@ -9,10 +9,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 
-public class CrossBrowser extends Log{
+public class CrossBrowser extends Log {
 	protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-	protected static ThreadLocal<String> parallelDriver = new ThreadLocal<>();
 	protected static ThreadLocal<SoftAssert> soft = new ThreadLocal<>();
+	protected static ThreadLocal<String> parallelDriver = new ThreadLocal<>();
+	protected static ThreadLocal<String> properties = new ThreadLocal<>();
+
 	private DesiredCapabilities cap;
 	private String URL = "https://agenciadigital.des.caixa:8002/siavl-web/index.html#!/";
 
@@ -27,18 +29,16 @@ public class CrossBrowser extends Log{
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\F642250\\Documents\\automacao\\AgenciaDigital\\AgenciaDigital\\src\\test\\java\\drivers\\chromedriver.exe");
 			driver.set(new ChromeDriver());
-			
-		} else if(navegador.equalsIgnoreCase("Firefox")) {
+
+		} else if (navegador.equalsIgnoreCase("Firefox")) {
 			System.setProperty("webdriver.gecko.driver",
-					"C:\\Users\\F642250\\Documents\\automacao\\AgenciaDigital\\AgenciaDigital\\src\\test\\java\\drivers\\geckodriver.exe");
+					"C:\\Users\\F642250\\Documents\\automacao\\AgenciaDigital\\AgenciaDigital\\src\\test\\java\\drivers\\geckodriver-v0.23.0-win64\\geckodriver.exe");
 			cap = DesiredCapabilities.firefox();
 			FirefoxOptions opts = new FirefoxOptions();
-			opts.addArguments("-private");
-			opts.setAcceptInsecureCerts(true);
-			cap.setCapability(FirefoxOptions.FIREFOX_OPTIONS, opts);
+			//opts.addArguments("-private");
+			//opts.setAcceptInsecureCerts(true);
+			//cap.setCapability(FirefoxOptions.FIREFOX_OPTIONS, opts);
 			driver.set(new FirefoxDriver(opts));
-			acessaAplicacao();
-		
 		}
 		acessaAplicacao();
 	}
@@ -53,7 +53,7 @@ public class CrossBrowser extends Log{
 		driver.get().manage().window().maximize();
 	}
 
-	@AfterMethod
+	//@AfterMethod
 	public void finalizaBrowser() {
 		driver.get().quit();
 		Log.info("Encerrando Navegador");
